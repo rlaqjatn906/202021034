@@ -35,17 +35,22 @@ st.pyplot(fig1)
 # 주파수 응답 계산
 w, mag, phase = control.bode(feedback_tf)
 
-# 보드선도 그리기
+# 보드선도 그리기 (이득)
 fig2 = plt.figure()
 plt.semilogx(w, mag)
-plt.title('Bode Plot')
+plt.title('Bode Plot (Magnitude)')
 plt.xlabel('Frequency [rad/s]')
 plt.ylabel('Magnitude [dB]')
 plt.grid(True)
-st.subheader("보드선도")
+st.subheader("보드선도 (이득)")
 st.pyplot(fig2)
 
-# 주파수 응답 계산
-st.subheader("주파수 응답 계산")
-for i in range(len(w)):
-    st.write(f"주파수: {w[i]} rad/s, Magnitude: {mag[i]} dB, Phase: {phase[i]} degrees")
+# 보드선도 그리기 (위상)
+fig3 = plt.figure()
+plt.semilogx(w, phase)
+plt.title('Bode Plot (Phase)')
+plt.xlabel('Frequency [rad/s]')
+plt.ylabel('Phase [degrees]')
+plt.grid(True)
+st.subheader("보드선도 (위상)")
+st.pyplot(fig3)
