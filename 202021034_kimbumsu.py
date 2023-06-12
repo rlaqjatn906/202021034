@@ -1,3 +1,6 @@
+import streamlit as st
+st.title("202021034 김범수 제어공학")
+st.header("기말고사")
 import numpy as np
 from scipy import signal
 import matplotlib.pyplot as plt
