@@ -4,8 +4,8 @@ from scipy import signal
 import matplotlib.pyplot as plt
 import control
 
-st.title("202021034 김범수 제어공학", style="color: red; font-size: 30px;")
-st.header("기말고사", style="color: blue;")
+st.markdown("<h1 style='color: red; font-size: 30px;'>202021034 김범수 제어공학</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='color: blue;'>기말고사</h2>", unsafe_allow_html=True)
 # 전달함수 정의
 num = [100]
 den = [1, 5, 6]
