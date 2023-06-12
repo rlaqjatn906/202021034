@@ -29,6 +29,8 @@ plt.title('Step Response')
 plt.xlabel('Time [s]')
 plt.ylabel('Output')
 plt.grid(True)
+st.subheader("응답곡선")
+st.pyplot(fig1)
 
 # 주파수 응답 계산
 w, mag, phase = control.bode(feedback_tf)
@@ -40,7 +42,10 @@ plt.title('Bode Plot')
 plt.xlabel('Frequency [rad/s]')
 plt.ylabel('Magnitude [dB]')
 plt.grid(True)
-
-# 그래프를 Streamlit 애플리케이션에 표시
-st.pyplot(fig1)
+st.subheader("보드선도")
 st.pyplot(fig2)
+
+# 주파수 응답 계산
+st.subheader("주파수 응답 계산")
+for i in range(len(w)):
+    st.write(f"주파수: {w[i]} rad/s, Magnitude: {mag[i]} dB, Phase: {phase[i]} degrees")
