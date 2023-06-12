@@ -15,6 +15,10 @@ sys_tf = control.TransferFunction(num, den)
 # 폐루프 전달함수 계산
 feedback_tf = control.feedback(sys_tf)
 
+# 폐루프 전달함수 출력
+st.subheader("폐루프 전달함수")
+st.text(feedback_tf)
+
 # unit step 입력에 대한 응답곡선 계산
 t, y = control.step_response(feedback_tf)
 
